@@ -1,0 +1,598 @@
+.page {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+
+.sidebar {
+  background-color: white;
+  padding: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  width: 16rem;
+  min-width: 260px;
+  border-right: 1px solid #e5e7eb;
+}
+.sidebarSection {
+  margin-bottom: 1.5rem;
+}
+
+.sidebarDivider {
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 1rem 0;
+}
+
+.sidebarMenu {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  color: #4B5563;
+}
+
+.sidebarMenuItem {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  cursor: pointer;
+  font-size: 15px;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+.sidebarMenuItem:hover {
+  color: #6366F1;
+  background-color: #f3f4f6;
+}
+.sidebarHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem; /* space between logo and title */
+  margin-bottom: 1.5rem;
+}
+
+.sidebarTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.selected {
+  color: #6366F1;
+  font-weight: 600;
+  background-color: #f3f4f6;
+}
+
+.mainContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  min-height: 100vh;
+  width: 100%;
+}
+.topbar {
+  width: 100%;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* 🆕 allow left-right content */
+  padding: 0 1.5rem;
+  border-bottom: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.topbarIcons {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem; /* ✅ spacing between icons */
+}
+
+
+.profileImage {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+
+.formContainer {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  padding: 1.5rem;
+  font-size: 13px;
+  justify-content: center;
+}
+
+.formDivider {
+  width: 100%;
+  height: 1px;
+  background-color: #e5e7eb;
+  margin: 1.5rem 0;
+}
+
+.submitContainer {
+  position: absolute;
+  bottom: 0;
+  right: 0; 
+  left: 0; 
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.graphContainer {
+  position: absolute; 
+  width: 50%;
+  height: 200px;
+  bottom: 100;
+  background: #f9fafb;
+  padding: 1rem;
+  display: inline-flex;
+  justify-content: flex-start; 
+  align-items: baseline;
+  box-shadow: 0 1px rgba(0, 0, 0, 0.1);
+}
+
+/* ✅ ADDED: Security Report Text Box Styling */
+.textBoxContainer {
+  position: absolute;
+  width: 45%;
+  height: 200px;
+  bottom: 100;
+  background: #ffffff;
+  padding: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow-y: auto;
+}
+
+/* ✅ Ensures Graph and Text Box Align Properly */
+.graphTextContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+/* Responsive Design Updates */
+@media (max-width: 1024px) {
+  .sidebar {
+    width: 14rem;
+    min-width: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    width: 12rem;
+    min-width: 200px;
+    padding: 1rem;
+  }
+
+  .sidebarMenuItem {
+    font-size: 14px;
+    padding: 0.5rem;
+  }
+
+  .formContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .box {
+    width: 100%;
+  }
+
+  .graphContainer {
+    min-height: 400px;
+  }
+
+  /* ✅ Ensures Text Box Stacks Below Graph on Mobile */
+  .graphTextContainer {
+    flex-direction: column;
+  }
+
+  .textBoxContainer {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+
+.labelSection {
+  padding: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.labelList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-left: 1.5rem;
+}
+
+.labelItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 14px;
+}
+.graphTextContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.graphSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Text box beside the graph */
+.optionsBox {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}
+
+.optionsTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.optionsText ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.optionsText li {
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.optionsText p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Responsive: Stacks the text box below the graph */
+@media (max-width: 768px) {
+  .graphTextContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .optionsBox {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+.optionsBox {
+  width: 100%;
+  margin-top: 20px;
+  padding: 15px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.optionsTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.optionsText ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.optionsText li {
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.optionsText p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Graph container styling */
+.graphContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.graphImage {
+  width: 100%;
+  max-width: 500px;
+}
+.graphTextContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-top: 20px;
+}
+
+.graphSection {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Text box beside the Pie Chart */
+.optionsBox {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+}
+
+.optionsTitle {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.optionsText ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.optionsText li {
+  padding: 5px 0;
+  font-size: 14px;
+}
+
+.optionsText p {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Responsive: Stacks the text box below the Pie Chart on smaller screens */
+@media (max-width: 768px) {
+  .graphTextContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .optionsBox {
+    margin-top: 20px;
+    width: 100%;
+  }
+}
+.graphContainer {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between Pie Chart and Text Container */
+}
+
+.pieChartContainer {
+  width: 500px;
+}
+
+.textContainer {
+  width: 250px;
+  padding: 20px;
+  background-color: #f3f3f3;
+  border-radius: 8px;
+  text-align: left;
+}
+
+.textContainer h3 {
+  margin-bottom: 10px;
+}
+
+.textContainer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.textContainer li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* ✅ Styles for New AI Response Box */
+/* ✅ Fixed AI Response Box at Bottom */
+.responseBox {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent */
+  backdrop-filter: blur(8px);
+  border-top: 1px solid #ddd;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  max-height: 200px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ Only the Response Text is Scrollable */
+.responseText {
+  max-height: 150px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+
+
+/* ✅ Centered Pie Chart */
+.pieChartContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 700px;
+}
+
+/* ✅ AI Response Box Beside the Chart */
+.responseBox {
+  width: 45%;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  max-height: 240px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ✅ Scrollable Response Text */
+.responseText {
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+.graphResponseContainer {
+  display: flex;
+  flex-direction: row; /* 📌 side-by-side layout */
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 400px; /* 📌 adjust for spacing below dropdowns */
+  padding-left: 30px; /* 📌 from sidebar */
+  gap: 70px;
+}
+
+.graphResponseItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.pieChartContainer {
+  width: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.responseBox {
+  width: 500px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  max-height: 240px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.responseText {
+  max-height: 180px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
+
+
+/* ✅ Responsive Adjustments for Mobile */
+@media (max-width: 768px) {
+  .graphResponseContainer {
+    flex-direction: column; /* Stack items on smaller screens */
+    align-items: center;
+    padding-left: 0; /* Remove left padding for mobile */
+  }
+
+  .responseBox {
+    width: 100%; /* Full width on small screens */
+    margin-top: 20px;
+  }
+}
+.fixedBox {
+  position: absolute;
+  top: 500px;          /* 400px below dropdown */
+  left: 1000px;         /* 100px from left (including sidebar) */
+  width: 700px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  max-height: 240px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 10;
+}
+.responseText {
+  max-height: 180px;
+  overflow-y: auto;         /* Only vertical scrolling */
+  overflow-x: hidden;       /* No horizontal scrolling */
+  padding-right: 8px;
+  font-size: 16px;
+  line-height: 1.6;
+
+  white-space: pre-wrap;    /* Preserve newlines and allow wrapping */
+  word-break: break-word;   /* Break long words mid-word */
+  overflow-wrap: break-word;/* Ensures breaking inside long words */
+}
+
+.markdownContent {
+  font-size: 14px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* ✅ Reduce line height only for headings */
+.markdownContent h1,
+.markdownContent h2,
+.markdownContent h3,
+.markdownContent h4,
+.markdownContent h5,
+.markdownContent h6 {
+  line-height: 1.2;
+  margin: 0;
+  padding: 0;
+}
+
+/* 🟢 Allow normal spacing for lists and text */
+.markdownContent p,
+.markdownContent ul,
+.markdownContent ol,
+.markdownContent li {
+  line-height: 1; /* Better readability for normal content */
+  font-size: medium;
+}
